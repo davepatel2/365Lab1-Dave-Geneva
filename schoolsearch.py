@@ -98,9 +98,7 @@ def info(file):
     #For each grade (from 0 to 6) compute the total number of students in that grade.
     #Report the number of students in each grade in the format
     #<Grade>: <Number of Students>
-    #sorted in ascending order by grade.
-    
-    return 
+    #sorted in ascending order by grade. 
     
     
 # Geneva Laurain
@@ -109,7 +107,7 @@ def info(file):
 def main():
     file = open('students.txt', 'r')
     while True:
-        search = input("Enter a search query: ").strip()
+        search = input("Enter a search query ('Q' to quit): ").strip()
         if search == 'Q':
             print("Exiting")
             break
@@ -128,6 +126,7 @@ def main():
                 student(lastname, False, file)
         elif key == 'T':
             lastname = params
+            print("\nStudents taking %s: " % lastname)
             teacher(lastname, file)
         elif key == 'B':
             number = params
@@ -139,6 +138,8 @@ def main():
             elif 'L' in params.upper():
                 grade(number, "L", file)
             else:
+                number = int(params)
+                print("\nStudents in grade %d: " % number)
                 grade(number, 0, file)
         elif key == 'A':
             number = int(params)
