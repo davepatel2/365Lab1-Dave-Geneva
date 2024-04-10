@@ -1,5 +1,6 @@
 
 
+
 def student(lastname, isbus, file):
     for line in file: 
         linearr = line.split(",")
@@ -79,3 +80,54 @@ def info():
     #Report the number of students in each grade in the format
     #<Grade>: <Number of Students>
     #sorted in ascending order by grade.
+    
+    
+# Geneva Laurain
+
+
+def main():
+    file = open('students.txt', 'r')
+    while True:
+        search = input("Enter a search query: ").strip()
+        if search == 'Q':
+            print("Exiting")
+            break
+        token = search.split(':')
+        if len(token) != 2:
+            print("Invalid Search Query")
+            continue
+        
+        key = token[0].upper()
+        params = token[1].strip()
+        if key == 'S':
+            lastname = params.split()[0]
+            if 'B' in params.upper():
+                student(lastname, True, file)
+            else:
+                student(lastname, False, file)
+        elif key == 'T':
+            lastname = params
+            teacher(lastname, file)
+        elif key == 'B':
+            number = params
+            bus(number, file)
+        elif key == 'G':
+            number = params.split()[0]
+            if 'H' in params.upper():
+                grade(number, "H", file)                
+            elif 'L' in params.upper():
+                grade(number, "L", file)
+            else:
+                grade(number, 0, file)
+        elif key == 'A':
+            number = int(params)
+            average(number, file)
+        elif key == 'I':  
+            info(file) 
+        else:
+            print("Command not Found")
+                 
+    
+if __name__ == "__main__":
+    main()
+
