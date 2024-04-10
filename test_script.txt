@@ -18,22 +18,22 @@ T: NOBODY
 
 // Test Case 7: Valid bus route search (B:) - Tests R3, R8
 // Expected output: list of students with the bus route number
-B: 108
+B: 52
 
 // Test Case 8: Invalid bus route search (B:) - Tests R3, R8 (no output expected) 
 B: 999
 
 // Test Case 9: Valid student search by grade (G:) with number only - Tests R3, R7
 // Expected output: list of students in the specified grade
-G: 5
+G: 2
 
 // Test Case 10: Valid student search by grade (G:) with high GPA (H) - Tests R3, R9
 // Expected output: student information including last name, first name, GPA, teacher's last, first name, bus route for the student with the highest GPA in the grade
-G: 5 H
+G: 4 H
 
 // Test Case 11: Valid student search by grade (G:) with low GPA (L) - Tests R3, R9
 // Expected output: student information including last name, first name, GPA, teacher's last, first name, bus route for the student with the lowest GPA in the grade
-G: 5 L 
+G: 4 L 
 
 // Test Case 12: Invalid grade search by format (G:) - Tests R3, R7 (no output expected)
 G: five

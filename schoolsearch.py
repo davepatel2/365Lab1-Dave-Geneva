@@ -6,9 +6,9 @@ def student(lastname, isbus, file):
         linearr = line.split(",")
         if(linearr[0] == lastname):
             if (isbus == True):
-                print(f"{linearr[0]} {linearr[1]} {linearr[4]}\n")
+                print(f"{linearr[0]},{linearr[1]},{linearr[4]}\n")
             else:
-                print(f"{linearr[0]} {linearr[1]} {linearr[2]} {linearr[3]}\n")
+                print(f"{linearr[0]},{linearr[1]},{linearr[2]},{linearr[3]}\n")
 
 
     #search through text file, for each last name there that matches the given lastname
@@ -22,7 +22,7 @@ def teacher(lastname, file):
     for line in file: 
         linearr = line.split(",")
         if(linearr[6] == lastname):
-            print(f"{linearr[0]} {linearr[1]} \n")
+            print(f"{linearr[0]},{linearr[1]} \n")
 
 def grade(number, file):
     #search for data where grades match
@@ -30,15 +30,15 @@ def grade(number, file):
     for line in file: 
         linearr = line.split(",")
         if(int(linearr[2]) == number):
-            print(f"{linearr[0]} {linearr[1]} \n")
+            print(f"{linearr[0]},{linearr[1]} \n")
 
-def bus(number, file):
+def bus(number, file): #does not have title
     #serach for same bus number
     # output the name of the student (last and first) and their grade and classroom.
     for line in file: 
         linearr = line.split(",")
-        if(int(linearr[4]) == number):
-            print(f"{linearr[0]} {linearr[1]} {linearr[2]} \n")
+        if(linearr[4] == number):
+            print(f"{linearr[0]},{linearr[1]},{linearr[2]} \n")
 
 def grade(number, HL, file):
     #search for grade match
@@ -54,20 +54,24 @@ def grade(number, HL, file):
         linearr = line.split(",")
  
         if( HL != "L" or HL != "H"):
+            
             if(int(linearr[2]) == number):
-                print(f"{maxarr[0]} {maxarr[1]}")
+                print(f"{linearr[0]},{linearr[1]}")
+            continue
         else:    
             if(int(linearr[2]) == number):
+               
                 if (int(linearr[5]) > maxval):
                     maxval = linearr[5]
                     maxarr = linearr
                 if (int(linearr[5])< minval):
                     minval = linearr[5]
                     minarr = linearr
-    if (HL == "L"):
-        print(f"{minarr[0]} {minarr[1]} {minarr[5]}, {minarr[6]} {minarr[7]} {minarr[4]}\n")
-    if (HL == "H"):
-        print(f"{maxarr[0]} {maxarr[1]} {maxarr[5]}, {maxarr[6]} {maxarr[7]} {maxarr[4]}\n")
+    
+    # if (HL == "L"):
+    #     print(f"{minarr[0]},{minarr[1]},{minarr[5]},{minarr[6]},{minarr[7]},{minarr[4]}\n")
+    # if (HL == "H"):
+    #     print(f"{maxarr[0]},{maxarr[1]},{maxarr[5]},{maxarr[6]},{maxarr[7]},{maxarr[4]}\n")
 
 
 
@@ -121,11 +125,11 @@ def main():
         if key == 'S':
             lastname = params.split()[0]
             if 'B' in params.upper():
-                student(lastname, True, file)
+                student(lastname.upper(), True, file)
             else:
-                student(lastname, False, file)
+                student(lastname.upper(), False, file)
         elif key == 'T':
-            lastname = params
+            lastname = params.upper()
             print("\nStudents taking %s: " % lastname)
             teacher(lastname, file)
         elif key == 'B':
