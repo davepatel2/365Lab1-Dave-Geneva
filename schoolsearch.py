@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 
 
 def student(lastname, isbus):
@@ -39,3 +40,24 @@ def info():
     #Report the number of students in each grade in the format
     #<Grade>: <Number of Students>
     #sorted in ascending order by grade.
+=======
+# Geneva Laurain
+
+
+def main():
+    students = 
+    while True:
+        search = input("Enter a search query: ").strip()
+        if search == 'Q':
+            print("Exiting")
+            break
+        token = search.split(':')
+        key = token[0].upper()
+        params = token[1].strip()
+        if key == 'I':
+            
+        
+    
+if __name__ == "__main__":
+    main()
+>>>>>>> Stashed changes
