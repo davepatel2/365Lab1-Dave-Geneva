@@ -106,7 +106,7 @@ def info(file):
 def main():
     file = open('students.txt', 'r')
     while True:
-        search = input("Enter a search query: ").strip()
+        search = input("Enter a search query ('Q' to quit): ").strip()
         if search == 'Q':
             print("Exiting")
             break
