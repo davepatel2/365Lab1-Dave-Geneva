@@ -71,7 +71,6 @@ def grade(number, HL, file):
 
 
 def average(number, file):
-def average(number, file):
     #find where grades match the number
     #Compute the average GPA score for the entries found. Output the grade level (the number
     #provided in command) and the average GPA score computed.
@@ -98,9 +97,7 @@ def info(file):
     #For each grade (from 0 to 6) compute the total number of students in that grade.
     #Report the number of students in each grade in the format
     #<Grade>: <Number of Students>
-    #sorted in ascending order by grade.
-    print("hello")
-    return 
+    #sorted in ascending order by grade. 
     
     
 # Geneva Laurain
@@ -128,6 +125,7 @@ def main():
                 student(lastname, False, file)
         elif key == 'T':
             lastname = params
+            print("\nStudents taking %s: " % lastname)
             teacher(lastname, file)
         elif key == 'B':
             number = params
@@ -139,6 +137,8 @@ def main():
             elif 'L' in params.upper():
                 grade(number, "L", file)
             else:
+                number = int(params)
+                print("\nStudents in grade %d: " % number)
                 grade(number, 0, file)
         elif key == 'A':
             number = int(params)
