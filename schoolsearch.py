@@ -70,7 +70,7 @@ def grade(number, HL, file):
         print(f"{maxarr[0]} {maxarr[1]} {maxarr[5]}, {maxarr[6]} {maxarr[7]} {maxarr[4]}\n")
 
 
-def average(number, file):
+
 def average(number, file):
     #find where grades match the number
     #Compute the average GPA score for the entries found. Output the grade level (the number
@@ -91,7 +91,7 @@ def info(file):
     map = {0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0}
     for line in file: 
         linearr = line.split(",")
-        if(linearr[2]<= 6):
+        if(int(linearr[2])<= 6):
             map[linearr[5]] += 1
     for data in map:
         print(f"{map.keys}: {map.values}")
@@ -99,7 +99,7 @@ def info(file):
     #Report the number of students in each grade in the format
     #<Grade>: <Number of Students>
     #sorted in ascending order by grade.
-    print("hello")
+    
     return 
     
     
