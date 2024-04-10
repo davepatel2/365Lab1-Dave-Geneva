@@ -70,16 +70,20 @@ def grade(number, HL, file):
                 print(f"{maxarr[0]} {maxarr[1]} {maxarr[5]}, {maxarr[6]} {maxarr[7]} {maxarr[4]}")
 
 
-def average(number):
+def average(number, file):
     #find where grades match the number
     #Compute the average GPA score for the entries found. Output the grade level (the number
     #provided in command) and the average GPA score computed.
+    return
 
 def info():
+    
     #For each grade (from 0 to 6) compute the total number of students in that grade.
     #Report the number of students in each grade in the format
     #<Grade>: <Number of Students>
     #sorted in ascending order by grade.
+    print("hello")
+    return 
     
     
 # Geneva Laurain
