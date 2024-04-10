@@ -1,0 +1,51 @@
+// CSC 365
+// Lab 1-a test suite
+
+// Test Case 1: Valid student search with short name (S:) - Tests R3, R4
+// Expected output: student information including last name, first name, grade, classroom, and teacher's last, first name
+S: HAVIR
+
+// Test Case 4: Non-existent student search (S:) - Tests R3, R4
+// Expected output: empty line
+S: NEMO
+
+// Test Case 5: Valid teacher search (T:) - Tests R3, R6
+// Expected output: list of students with the teacher's last name
+T: HAMER
+
+// Test Case 6: Non-existent teacher search (T:) - Tests R3, R6 (no output expected)
+T: NOBODY
+
+// Test Case 7: Valid bus route search (B:) - Tests R3, R8
+// Expected output: list of students with the bus route number
+B: 108
+
+// Test Case 8: Invalid bus route search (B:) - Tests R3, R8 (no output expected) 
+B: 999
+
+// Test Case 9: Valid student search by grade (G:) with number only - Tests R3, R7
+// Expected output: list of students in the specified grade
+G: 5
+
+// Test Case 10: Valid student search by grade (G:) with high GPA (H) - Tests R3, R9
+// Expected output: student information including last name, first name, GPA, teacher's last, first name, bus route for the student with the highest GPA in the grade
+G: 5 H
+
+// Test Case 11: Valid student search by grade (G:) with low GPA (L) - Tests R3, R9
+// Expected output: student information including last name, first name, GPA, teacher's last, first name, bus route for the student with the lowest GPA in the grade
+G: 5 L 
+
+// Test Case 12: Invalid grade search by format (G:) - Tests R3, R7 (no output expected)
+G: five
+
+// Test Case 13: Valid calculation of average GPA (A:) - Tests R3, R10
+// Expected output: grade level and average GPA
+A: 5
+
+// Test Case 14: Information about all grades (I:) - Tests R3, R11
+// Expected output: number of students in each grade
+I: 
+
+// Test Case 15: Quit command (Q) - Tests R3, R12
+// Expected output: program terminates
+Q
