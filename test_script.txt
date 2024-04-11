@@ -1,17 +1,31 @@
 // CSC 365
 // Lab 1-a test suite
 
-// Test Case 1: Valid student search with short name (S:) - Tests R3, R4
-// Expected output: student information including last name, first name, grade, classroom, and teacher's last, first name
+// Test Case 1: Valid student search with short name (S:) - Tests R4
+// Expected output: student's last name, first name, grade, classroom, and teacher's last, first name
+// Current output: FAILED (didnt print teacher's name)
 S: HAVIR
 
-// Test Case 4: Non-existent student search (S:) - Tests R3, R4
+
+// Test Case 2: Non-existent student search (S:) - Tests R4
 // Expected output: empty line
 S: NEMO
+PASSED
 
-// Test Case 5: Valid teacher search (T:) - Tests R3, R6
-// Expected output: list of students with the teacher's last name
+// Test Case 3: Student bus route search (S:) - Tests R5
+// Expected output: List of students who take the input bus route (Student's last name, first name, and bus route)
+S: HAVIR 51
+FAILED-outputs an empty line
+
+// Test Case 4: Student invalid bus route search (S:) - Tests R5
+// Expected output: Empty line
+S: HAVIR 0
+passed
+
+// Test Case 5: Valid teacher search (T:) - Tests R6
+// Expected output: list of students (LAST, FIRST)  in the teachers class
 T: HAMER
+T: ALPERT
 
 // Test Case 6: Non-existent teacher search (T:) - Tests R3, R6 (no output expected)
 T: NOBODY

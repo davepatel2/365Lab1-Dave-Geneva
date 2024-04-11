@@ -1,6 +1,3 @@
-
-
-
 def student(lastname, isbus, file):
     for line in file: 
         linearr = line.split(",")
@@ -105,11 +102,9 @@ def info(file):
     #sorted in ascending order by grade. 
     
     
-# Geneva Laurain
-
-
-def main():
+def main(): 
     while True:
+        file = open('students.txt', 'r')
         file = open('students.txt', 'r')
         search = input("Enter a search query ('Q' to quit): ").strip()
         if search == 'Q':
@@ -153,9 +148,7 @@ def main():
         else:
             print("Command not Found")
         file.close()
-                 
-                 
-    
-if __name__ == "__main__":
-    main()
 
+
+if __name__ == "__main__":
+  main()
