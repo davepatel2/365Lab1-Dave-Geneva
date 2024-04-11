@@ -24,13 +24,13 @@ def teacher(lastname, file):
         if(linearr[6] == lastname):
             print(f"{linearr[0]},{linearr[1]} \n")
 
-def grade(number, file):
-    #search for data where grades match
-    # output name (last and first) of the student
-    for line in file: 
-        linearr = line.split(",")
-        if(int(linearr[2]) == number):
-            print(f"{linearr[0]},{linearr[1]} \n")
+# def grade(number, file):
+#     #search for data where grades match
+#     # output name (last and first) of the student
+#     for line in file: 
+#         linearr = line.split(",")
+#         if(int(linearr[2]) == number):
+#             print(f"{linearr[0]},{linearr[1]} \n")
 
 def bus(number, file): #does not have title
     #serach for same bus number
@@ -52,26 +52,23 @@ def grade(number, HL, file):
     minarr = []
     for line in file:
         linearr = line.split(",")
- 
-        if( HL != "L" or HL != "H"):
-            
-            if(int(linearr[2]) == number):
+        if( HL != "L" and HL != "H"):
+            if(int(linearr[2]) == int(number)):
                 print(f"{linearr[0]},{linearr[1]}")
             continue
-        else:    
-            if(int(linearr[2]) == number):
-               
-                if (int(linearr[5]) > maxval):
-                    maxval = linearr[5]
+        else:  
+            #print(f"{linearr[2]} ---- {number} /// {type(linearr[2])} -----{type(number)}" ) 
+            if(int(linearr[2]) == int(number)): 
+                if (float(linearr[5]) > maxval):
+                    maxval = float(linearr[5]) 
                     maxarr = linearr
-                if (int(linearr[5])< minval):
-                    minval = linearr[5]
+                if (float(linearr[5])< minval):
+                    minval = float(linearr[5])
                     minarr = linearr
-    
-    # if (HL == "L"):
-    #     print(f"{minarr[0]},{minarr[1]},{minarr[5]},{minarr[6]},{minarr[7]},{minarr[4]}\n")
-    # if (HL == "H"):
-    #     print(f"{maxarr[0]},{maxarr[1]},{maxarr[5]},{maxarr[6]},{maxarr[7]},{maxarr[4]}\n")
+    if (HL == "L"):
+        print(f"{minarr[0]},{minarr[1]},{minarr[5]},{minarr[6]},{minarr[7]},{minarr[4]}\n")
+    if (HL == "H"):
+        print(f"{maxarr[0]},{maxarr[1]},{maxarr[5]},{maxarr[6]},{maxarr[7]},{maxarr[4]}\n")
 
 
 
@@ -79,15 +76,18 @@ def average(number, file):
     #find where grades match the number
     #Compute the average GPA score for the entries found. Output the grade level (the number
     #provided in command) and the average GPA score computed.
-    totalstudents = 0
-    totalgpa = 0
+    totalstudents = 0.0
+    totalgpa = 0.0
     for line in file: 
         linearr = line.split(",")
-        if(int(linearr[5]) == number):
-            totalstudents += 1
-            totalgpa += linearr[5]
-    avg = totalgpa/totalstudents
-    print(f"{number} {avg}\n")
+        if(int(linearr[2]) == number):
+            totalstudents += 1.0
+            totalgpa += float(linearr[5])
+    if(totalstudents > 0):
+        avg = totalgpa/totalstudents
+        print(f"{number}, {round(avg,2)}\n")
+    else:
+        print("no one in grade provided")
     
 
 
@@ -96,9 +96,9 @@ def info(file):
     for line in file: 
         linearr = line.split(",")
         if(int(linearr[2])<= 6):
-            map[linearr[5]] += 1
-    for data in map:
-        print(f"{map.keys}: {map.values}")
+            map[int(linearr[2])] += 1
+    for key, value in map.items():
+        print(f"{key}: {value}")
     #For each grade (from 0 to 6) compute the total number of students in that grade.
     #Report the number of students in each grade in the format
     #<Grade>: <Number of Students>
@@ -109,8 +109,8 @@ def info(file):
 
 
 def main():
-    file = open('students.txt', 'r')
     while True:
+        file = open('students.txt', 'r')
         search = input("Enter a search query ('Q' to quit): ").strip()
         if search == 'Q':
             print("Exiting")
@@ -119,8 +119,8 @@ def main():
         if len(token) != 2:
             print("Invalid Search Query")
             continue
-        
-        key = token[0].upper()
+
+        key = token[0].strip().upper()
         params = token[1].strip()
         if key == 'S':
             lastname = params.split()[0]
@@ -152,6 +152,8 @@ def main():
             info(file) 
         else:
             print("Command not Found")
+        file.close()
+                 
                  
     
 if __name__ == "__main__":
