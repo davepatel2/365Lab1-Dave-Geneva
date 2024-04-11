@@ -3,7 +3,7 @@
 
 // Test Case 1: Valid student search with short name (S:) - Tests R4
 // Expected output: student's last name, first name, grade, classroom, and teacher's last, first name
-// Current output: FAILED (didnt print teacher's name)
+// Current output: HAVIR,BOBBIE,2,108,HAMER,GAVIN
 S: HAVIR
 
 
@@ -14,13 +14,8 @@ PASSED
 
 // Test Case 3: Student bus route search (S:) - Tests R5
 // Expected output: List of students who take the input bus route (Student's last name, first name, and bus route)
-S: HAVIR 51
-FAILED-outputs an empty line
+S: HAVIR B
 
-// Test Case 4: Student invalid bus route search (S:) - Tests R5
-// Expected output: Empty line
-S: HAVIR 0
-passed
 
 // Test Case 5: Valid teacher search (T:) - Tests R6
 // Expected output: list of students (LAST, FIRST)  in the teachers class
@@ -54,7 +49,7 @@ G: five
 
 // Test Case 13: Valid calculation of average GPA (A:) - Tests R3, R10
 // Expected output: grade level and average GPA
-A: 5
+A: 4
 
 // Test Case 14: Information about all grades (I:) - Tests R3, R11
 // Expected output: number of students in each grade

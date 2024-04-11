@@ -3,9 +3,9 @@ def student(lastname, isbus, file):
         linearr = line.split(",")
         if(linearr[0] == lastname):
             if (isbus == True):
-                print(f"{linearr[0]},{linearr[1]},{linearr[4]}\n")
+                print(f"{linearr[0]},{linearr[1]},{linearr[4]}")
             else:
-                print(f"{linearr[0]},{linearr[1]},{linearr[2]},{linearr[3]}\n")
+                print(f"{linearr[0]},{linearr[1]},{linearr[2]},{linearr[3]},{linearr[6]},{linearr[7]}")
 
 
     #search through text file, for each last name there that matches the given lastname
@@ -19,7 +19,7 @@ def teacher(lastname, file):
     for line in file: 
         linearr = line.split(",")
         if(linearr[6] == lastname):
-            print(f"{linearr[0]},{linearr[1]} \n")
+            print(f"{linearr[0]},{linearr[1]}")
 
 # def grade(number, file):
 #     #search for data where grades match
@@ -35,7 +35,7 @@ def bus(number, file): #does not have title
     for line in file: 
         linearr = line.split(",")
         if(linearr[4] == number):
-            print(f"{linearr[0]},{linearr[1]},{linearr[2]} \n")
+            print(f"{linearr[0]},{linearr[1]},{linearr[2]},{linearr[3]}")
 
 def grade(number, HL, file):
     #search for grade match
@@ -63,9 +63,9 @@ def grade(number, HL, file):
                     minval = float(linearr[5])
                     minarr = linearr
     if (HL == "L"):
-        print(f"{minarr[0]},{minarr[1]},{minarr[5]},{minarr[6]},{minarr[7]},{minarr[4]}\n")
+        print(f"{minarr[0]},{minarr[1]},{minarr[5]},{minarr[6]},{minarr[7]},{minarr[4]}")
     if (HL == "H"):
-        print(f"{maxarr[0]},{maxarr[1]},{maxarr[5]},{maxarr[6]},{maxarr[7]},{maxarr[4]}\n")
+        print(f"{maxarr[0]},{maxarr[1]},{maxarr[5]},{maxarr[6]},{maxarr[7]},{maxarr[4]}")
 
 
 
@@ -124,7 +124,6 @@ def main():
                 student(lastname.upper(), False, file)
         elif key == 'T':
             lastname = params.upper()
-            print("\nStudents taking %s: " % lastname)
             teacher(lastname, file)
         elif key == 'B':
             number = params
@@ -137,7 +136,6 @@ def main():
                 grade(number, "L", file)
             else:
                 number = int(params)
-                print("\nStudents in grade %d: " % number)
                 grade(number, 0, file)
         elif key == 'A':
             number = int(params)
