@@ -17,9 +17,15 @@ PASSED
 S: HAVIR 51
 FAILED-outputs an empty line
 
-// Test Case 5: Valid teacher search (T:) - Tests R3, R6
-// Expected output: list of students with the teacher's last name
+// Test Case 4: Student invalid bus route search (S:) - Tests R5
+// Expected output: Empty line
+S: HAVIR 0
+passed
+
+// Test Case 5: Valid teacher search (T:) - Tests R6
+// Expected output: list of students (LAST, FIRST)  in the teachers class
 T: HAMER
+T: ALPERT
 
 // Test Case 6: Non-existent teacher search (T:) - Tests R3, R6 (no output expected)
 T: NOBODY
