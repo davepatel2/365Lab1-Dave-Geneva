@@ -1,6 +1,3 @@
-
-
-
 def student(lastname, isbus, file):
     for line in file: 
         linearr = line.split(",")
@@ -156,4 +153,3 @@ def main():
     
 if __name__ == "__main__":
     main()
-
