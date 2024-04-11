@@ -1,60 +1,143 @@
+
 // CSC 365
 // Lab 1-a test suite
 
-// Test Case 1: Valid student search with short name (S:) - Tests R4
-// Expected output: student's last name, first name, grade, classroom, and teacher's last, first name
-// Current output: HAVIR,BOBBIE,2,108,HAMER,GAVIN
+// TC-1
+// Tests R3, R4
+// Valid student search with short name (S:)
+// Expected output: HAVIR,BOBBIE,2,108,HAMER,GAVIN
+
 S: HAVIR
 
 
-// Test Case 2: Non-existent student search (S:) - Tests R4
+// TC-2: 
+// Tests R3, R4
+// Non-existent student search (S:)
 // Expected output: empty line
-S: NEMO
-PASSED
 
-// Test Case 3: Student bus route search (S:) - Tests R5
-// Expected output: List of students who take the input bus route (Student's last name, first name, and bus route)
+S: NEMO
+
+// TC-3: 
+// Tests R3, R5
+// Studen bus route search (S:)
+// Expected output: HAVIR,BOBBIE,0
+
 S: HAVIR B
 
+// TC-4: 
+// Tests R3, R6
+// Valid teacher search (T:)
+// Expected output: HAVIR,BOBBIE,0
+
+S: HAVIR B
 
 // Test Case 5: Valid teacher search (T:) - Tests R6
-// Expected output: list of students (LAST, FIRST)  in the teachers class
-T: HAMER
-T: ALPERT
+// Expected output: 
+//LIBRANDI,TODD
+//HAVIR,BOBBIE
+//SARAO,DIEDRA
+//VANCOTT,MIKE
+//WICINSKY,TERESE
+//KOZOLA,BUSTER
+//MULLINGS,LEIGHANN
+//BUSSMANN,BILLY
+//BERBES,DICK
+//MULGREW,RANDELL
+//TOWLEY,LANE
 
-// Test Case 6: Non-existent teacher search (T:) - Tests R3, R6 (no output expected)
+T: HAMER
+
+// TC-6: 
+// Tests R3, R6
+// Invalid teacher search (T:)
+// Expected output: <empty line>
+
 T: NOBODY
 
-// Test Case 7: Valid bus route search (B:) - Tests R3, R8
-// Expected output: list of students with the bus route number
+// TC-7: 
+// Tests R3, R7
+// Valid student search by grade (number only) (G:)
+// Expected output: 
+//SAELEE,DANILO
+//GARTH,JOHN
+
+G: 1
+
+// TC-8: 
+// Tests R3, R8
+// Valid bus route search (B:)
+// Expected output: 
+//COOKUS,XUAN,3,107
+//ELHADDAD,SHANTE,3,107
+//IMMERMAN,DEVIN,4,105
+//OBREIN,STAN,6,111
+//CORONADO,DIMPLE,6,102
+//SARAO,DIEDRA,2,108
+//EARLY,TORY,3,107
+
 B: 52
 
-// Test Case 8: Invalid bus route search (B:) - Tests R3, R8 (no output expected) 
+// TC-9: 
+// Tests R3, R8
+// Invalid bus route search (B:)
+// Expected output: <empty line>
+
 B: 999
 
-// Test Case 9: Valid student search by grade (G:) with number only - Tests R3, R7
-// Expected output: list of students in the specified grade
-G: 2
+// TC-10: 
+// Tests R3, R9
+// Valid student search by grade (G:) with high GPA (H)
+// Expected output: GARTH,JOHN,3.14,FALKER,ADOLPH,0
 
-// Test Case 10: Valid student search by grade (G:) with high GPA (H) - Tests R3, R9
-// Expected output: student information including last name, first name, GPA, teacher's last, first name, bus route for the student with the highest GPA in the grade
-G: 4 H
+G: 1 H
 
-// Test Case 11: Valid student search by grade (G:) with low GPA (L) - Tests R3, R9
-// Expected output: student information including last name, first name, GPA, teacher's last, first name, bus route for the student with the lowest GPA in the grade
-G: 4 L 
+// TC-11: 
+// Tests R3, R9
+// Valid student search by grade (G:) with low GPA (L)
+// Expected output: SAELEE,DANILO,2.85,FALKER,ADOLPH,54
 
-// Test Case 12: Invalid grade search by format (G:) - Tests R3, R7 (no output expected)
+G: 1 L
+
+// TC-12: 
+// Tests R3, R7, E1
+// invalid Grade input (G:) 
+// Expected output: "Invalid Input"
+
 G: five
 
-// Test Case 13: Valid calculation of average GPA (A:) - Tests R3, R10
-// Expected output: grade level and average GPA
+// TC-13: 
+// Tests R3, R10
+// Valid calculation of average GPA (A:) 
+// Expected output: 4, 2.95
+
 A: 4
 
-// Test Case 14: Information about all grades (I:) - Tests R3, R11
-// Expected output: number of students in each grade
+// TC-14: 
+// tests R3, R11
+// Information about all grades (I:) 
+// Expected output: 
+//0: 0
+//1: 2
+//2: 13
+//3: 9
+//4: 15
+//5: 0
+//6: 21
+
 I: 
 
-// Test Case 15: Quit command (Q) - Tests R3, R12
-// Expected output: program terminates
+// TC-15:  
+// Tests R3, R12
+// Quit command (Q)
+// Expected output: Exiting *program terminates*
+
 Q
+
+// TC-16:  
+// Tests E1
+// Invalid input
+// Expected output: Invalid Input
+
+I
+
+
